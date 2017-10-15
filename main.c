@@ -29,7 +29,7 @@ int main()
 
         scanf("%d", &task);
 
-        while (complete == 0){
+        while (complete == 0){  //This loop is so that the player can go back to previous if statements.
 
             if(task == 1){ //Everything in this if statement happens if the player decides to tell the chief what they found.
                 printf("You decide to tell the chief what you found!\n");
@@ -82,6 +82,50 @@ int main()
 
                 }
 
+            }
+
+            if (task == 3){
+                printf("You decide to go for a walk down Elm Street\n");
+                printf("As you approach the house, you see a half eaten donut lying outside, still fresh. Its a really poor neighborhood, no one would leave a fresh donut.\n");
+                printf("What would you like to do?\n1. Eat the donut\n2. Visit the bakery where the victim was last seen\n3. Send the donut to be tested.\n");
+                scanf("%d", &task);
+
+                if (task == 1){
+                printf("You decide to eat the donut.\nA few hours later you fall violently ill. You call an ambulance but it is too late...\n");
+                printf("\n\nYou died. Game Over");
+                return 0;
+                }
+                if (task == 3){
+                    printf("You send the donut to be tested.\n");
+                    printf("The lab discovers that the donut is identical to one from the bakery, except with one added ingredient, arsenic!\n");
+                    printf("You realize the killer has struck again so you must make an arrest now to avoid fear in the neighborhood.\n");
+                    printf("Who are you going to arrest?\n1. The Baker\n2. The chief\n3. Both the chief and the baker\n");
+                    scanf("%d", &task);
+
+                    if (task == 1){
+                        printf("You arrest the Baker\n");
+                        printf("You submit the evidence to the court. The judge comes to a conclusion...\n");
+                        printf("\n\nThe judge rules... Guilty! Congratulations, you solved the case detective %s\n\n\n", userName);
+                        complete = 1;
+                    }
+
+                    if (task == 2){
+                        printf("You arrest the chief\n");
+                        printf("Everyone is shocked at the arrest. You submit the evidence to the judge. The judge comes to a conclusion...\n");
+                        printf("\n\n The judge rules... Not Guilty!\nYou can't bare the shame and resign. Game Over!\n\n\n");
+                        return 0;
+                    }
+
+                    if (task == 3){
+                        printf("You arrest the baker and chief\n");
+                        printf("Everyone is shocked at the arrest. You submit the evidence to the judge. The judge comes to a conclusion...\n");
+                        printf("\n\n The judge rules... Guilty!\nA few years later they find the chief to be innocent. You can't bare the thought of arresting an innocent man\nYou decide to end your life. Game Over!\n\n\n");
+                        return 0;
+                    }
+
+
+
+                }
             }
         }
 
